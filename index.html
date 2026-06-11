@@ -1,18 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio in Development</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio BUT 2 - Aylan Haddouchi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Roboto / Google Fonts to match the Vuetify style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-bg"></div>
+    <div class="app-wrapper">
+        <!-- Top App Bar (Vuetify style) -->
+        <header class="app-bar">
+            <button class="menu-toggle-btn" id="drawer-toggle" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="app-title">Portfolio BUT 2</div>
+            <div class="user-profile-header">
+                <span class="user-name">Aylan Haddouchi</span>
+                <span class="user-email-wrap">(<a href="mailto:aylan.haddouchi@edu.univ-fcomte.fr" class="user-email">aylan.haddouchi@edu.univ-fcomte.fr</a>)</span>
+            </div>
+        </header>
 
-    <div class="container">
-        <h1 class="title">Portfolio Under Construction</h1>
-        <p class="subtitle">Comeback later...</p>
-        <div class="loader"></div>
+        <!-- Sidebar Navigation Drawer -->
+        <aside class="navigation-drawer" id="nav-drawer">
+            <nav class="drawer-nav">
+                <ul>
+                    <li>
+                        <button class="nav-item active" data-page="accueil">
+                            <span class="nav-icon">
+                                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </span>
+                            <span class="nav-text">Accueil</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-page="technique">
+                            <span class="nav-icon">
+                                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </span>
+                            <span class="nav-text">Technique</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-page="suivi-projet">
+                            <span class="nav-icon">
+                                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            </span>
+                            <span class="nav-text">Suivi de projet</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item" data-page="integration">
+                            <span class="nav-icon">
+                                <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            </span>
+                            <span class="nav-text">Intégration</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="drawer-footer">
+                <span>IUT Nord Franche-Comté</span>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <main class="main-content">
+            
+            <!-- ============================================== -->
+            <!-- PAGE: ACCUEIL                                  -->
+            <!-- ============================================== -->
+            <section id="page-accueil" class="page-section active">
+                <!-- Card: Présentation -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Présentation</div>
+                    <div class="v-card-text">
+                        <p>Ce site constitue mon portfolio de deuxième année de BUT Informatique. Il présente une description et une analyse des savoir-faire que j'ai acquis et mis en œuvre lors de mon alternance en entreprise.</p>
+                        <p>L'objectif est d'exposer mes compétences techniques, ma capacité à suivre un projet et mon intégration au sein de l'entreprise, en les illustrant par des traces concrètes issues de mon expérience professionnelle.</p>
+                        <p>Pour accéder aux 3 parties principales (Technique, Suivi de projet, Intégration), un panneau de menu est affichable en cliquant sur le bouton menu en haut à gauche.</p>
+                    </div>
+                </div>
+
+                <!-- Card: Contexte -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Contexte</div>
+                    <div class="v-card-text">
+                        <p>Les différentes traces, descriptifs et analyses présentés dans ce portfolio sont issus de mon alternance effectuée chez <strong>SOTAX Pharma Services</strong>, de août 2025 à août 2027. Le rythme d'alternance est d'une semaine en entreprise / une semaine à l'IUT en période scolaire, et à temps plein en entreprise en dehors de ces périodes.</p>
+                        <div class="contexte-layout mt-4">
+                            <div class="company-logo-box">
+                                <div class="image-mock">
+                                    <span>[Logo SOTAX]</span>
+                                </div>
+                                <span class="caption">Le logo de l'entreprise</span>
+                            </div>
+                            <div class="company-desc">
+                                <p>SOTAX Pharma Services est une entreprise spécialisée dans les solutions et services pour l'industrie pharmaceutique. Elle conçoit et commercialise des appareils de dissolution et de tests physiques, ainsi que les logiciels permettant de les piloter et d'assurer la conformité réglementaire (compliance). Au sein de l'équipe de développement logiciel, j'ai travaillé sur plusieurs projets internes couvrant le développement d'applications desktop et mobiles, l'intégration continue, la refonte d'outils existants et la contribution à des logiciels industriels.</p>
+                                <p><strong>Personnels impliqués :</strong> développeurs seniors, chef du Product Management, testeurs qualité, experts métier. J'ai travaillé en autonomie sur certains projets (application visiteurs, validateur de traductions) et en collaboration étroite avec l'équipe sur d'autres (Camos, Easytouch).</p>
+                                <p><strong>Moyens de travail :</strong> environnement Windows, Visual Studio 2026, .NET Framework et .NET Core, MySQL, GitLab (CI/CD, YAML), Jira, Confluence, imprimantes Zebra (réseau WiFi).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Synthèse -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Synthèse</div>
+                    <div class="v-card-text">
+                        <div class="synthese-layout">
+                            <div class="synthese-text">
+                                <p>Les savoir-faire généraux nécessaires à la réalisation de mes différentes missions sont très variés et couvrent plusieurs domaines de l'informatique.</p>
+                                <p>Sur le plan <strong>technique</strong>, j'ai principalement travaillé sur le <a href="#" class="internal-link" data-target="technique" data-tab="0">développement d'applications multi-plateformes en C#</a> (console, WinForms, Android/MAUI), incluant la communication réseau avec des <a href="#" class="internal-link" data-target="technique" data-tab="0">périphériques d'impression WiFi (Zebra SDK)</a>. J'ai également conçu un <a href="#" class="internal-link" data-target="technique" data-tab="1">outil de validation automatique</a> basé sur une architecture propre (SOLID, Dependency Injection) et intégré dans un pipeline CI/CD GitLab.</p>
+                                <p>Concernant le <strong>suivi de projet</strong>, j'ai su <a href="#" class="internal-link" data-target="suivi-projet" data-tab="0">traduire des besoins utilisateurs (URS)</a> en fonctionnalités concrètes pour l'application de gestion des échantillons, et j'ai mis en place des <a href="#" class="internal-link" data-target="suivi-projet" data-tab="1">pipelines CI/CD</a> pour automatiser les workflows de traduction.</p>
+                                <p>En matière d'<strong>intégration en entreprise</strong>, j'ai notamment <a href="#" class="internal-link" data-target="integration" data-tab="0">contribué de manière continue au projet Camos</a>, avec une prise de responsabilité progressive allant jusqu'à assurer le rôle de responsable temporaire lors de l'absence du lead développeur.</p>
+                            </div>
+                            <div class="synthese-logos">
+                                <div class="mini-logo-mock">C# / MAUI</div>
+                                <div class="mini-logo-mock">GitLab CI</div>
+                                <div class="mini-logo-mock">Jira</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- PAGE: TECHNIQUE                                -->
+            <!-- ============================================== -->
+            <section id="page-technique" class="page-section">
+                <!-- Header Info -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Présentation et évaluation de savoir-faire techniques</div>
+                    <div class="v-card-text">
+                        <p>Cette partie présente mes savoir-faire techniques acquis et mis en œuvre lors de mon alternance chez SOTAX. Deux traces illustrent des réalisations concrètes, suivies d'un bilan et d'une auto-évaluation de mes compétences techniques générales.</p>
+                    </div>
+                </div>
+
+                <!-- Sub Navigation Tabs -->
+                <div class="v-tabs-container mb-6">
+                    <button class="v-tab-btn active" data-tab-idx="0">Trace 1</button>
+                    <button class="v-tab-btn" data-tab-idx="1">Trace 2</button>
+                    <button class="v-tab-btn" data-tab-idx="2">Bilan &amp; évaluation</button>
+                </div>
+
+                <!-- Tab contents -->
+                <div class="v-tabs-content">
+                    <!-- ===== Tech Trace 1 : Application visiteurs ===== -->
+                    <div class="v-tab-pane active">
+                        <div class="v-card">
+                            <div class="v-card-title">Trace 1 : Développement de l'application d'enregistrement des visiteurs</div>
+                            <div class="v-card-text">
+                                <div class="skills-highlight-bar mb-4">
+                                    <strong>Savoir-faire élémentaires :</strong>
+                                    <span class="skill-tag bg-blue">Développer une application multi-plateforme (C#, WinForms, MAUI)</span>
+                                    <span class="skill-tag bg-green">Communiquer avec des périphériques réseau (Zebra SDK, WiFi)</span>
+                                    <span class="skill-tag bg-orange">Gérer la persistance de données (CSV, cloud)</span>
+                                </div>
+                                <div class="trace-grid">
+                                    <div class="trace-image-panel">
+                                        <div class="image-mock trace-mock">
+                                            <span>[Capture Trace 1 — à fournir]</span>
+                                            <div class="mock-marker frame" style="top:10%; left:10%; width:35%; height:25%;">
+                                                <span class="marker-label">Interface WinForms</span>
+                                            </div>
+                                            <div class="mock-marker frame" style="top:45%; left:50%; width:40%; height:30%;">
+                                                <span class="marker-label">Module impression Zebra</span>
+                                            </div>
+                                        </div>
+                                        <span class="caption">Trace 1 : Interface de l'application d'enregistrement des visiteurs</span>
+                                    </div>
+                                    <div class="trace-desc-panel">
+                                        <p>La Trace 1 ci-contre représente l'application d'enregistrement des visiteurs développée pour SOTAX Pharma Services. Avant cette application, l'enregistrement des visiteurs se faisait entièrement sur papier à l'accueil du laboratoire. Ce processus posait un problème majeur : en cas d'urgence (évacuation, incident), il n'existait aucun moyen rapide de savoir quels visiteurs étaient présents sur site. L'application permet désormais d'enregistrer numériquement chaque visiteur (nom, entreprise, personne visitée, horaires d'entrée et de sortie) avec un accès instantané à la liste des personnes présentes.</p>
+                                        <p>Le développement a suivi une progression technique réfléchie. J'ai d'abord créé une version C# console pour mettre au point et valider la logique de sauvegarde des données. Puis j'ai développé une version WinForms pour disposer d'une interface graphique utilisable sur un ordinateur à l'accueil. Enfin, j'ai <span class="highlighted-term bg-blue">porté l'application sur Android avec MAUI</span> pour répondre à un besoin de praticité : une tablette est désormais installée à l'entrée du laboratoire et les visiteurs s'enregistrent directement dessus. Cette progression m'a permis de <span class="highlighted-term bg-blue">développer une véritable application multi-plateforme</span>, en adaptant l'architecture et l'interface à chaque cible (desktop Windows, tablette Android).</p>
+                                        <p>Une extension majeure du projet a été l'ajout de l'impression de badges visiteurs via une imprimante WiFi Zebra. J'ai dû <span class="highlighted-term bg-green">intégrer le Zebra SDK pour communiquer en réseau (HTTP)</span>, gérer la découverte d'imprimantes par IP et assurer la fiabilité de la communication WiFi. La principale difficulté technique a été de résoudre les problèmes de compatibilité entre les différentes versions du Zebra SDK et les versions de .NET utilisées dans le projet.</p>
+                                        <p>Tout au long du développement, j'ai <span class="highlighted-term bg-orange">géré la persistance des données en CSV</span> puis réorganisé les sauvegardes vers le cloud pour améliorer l'expérience utilisateur et la fiabilité des données. L'application est aujourd'hui en version opérationnelle, utilisée quotidiennement à l'accueil du laboratoire, et fait l'objet d'améliorations continues.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Tech Trace 2 : Outil de validation automatique ===== -->
+                    <div class="v-tab-pane">
+                        <div class="v-card">
+                            <div class="v-card-title">Trace 2 : Création d'un outil de validation automatique de traductions (.resx)</div>
+                            <div class="v-card-text">
+                                <div class="skills-highlight-bar mb-4">
+                                    <strong>Savoir-faire élémentaires :</strong>
+                                    <span class="skill-tag bg-purple">Concevoir une architecture logicielle propre (SOLID, DI)</span>
+                                    <span class="skill-tag bg-red">Intégrer un outil dans un pipeline CI/CD (GitLab)</span>
+                                </div>
+                                <div class="trace-grid">
+                                    <div class="trace-image-panel">
+                                        <div class="image-mock trace-mock">
+                                            <span>[Capture Trace 2 — à fournir]</span>
+                                            <div class="mock-marker frame" style="top:15%; left:10%; width:80%; height:20%;">
+                                                <span class="marker-label">Architecture SOLID</span>
+                                            </div>
+                                            <div class="mock-marker frame" style="top:60%; left:10%; width:80%; height:25%;">
+                                                <span class="marker-label">Pipeline CI GitLab</span>
+                                            </div>
+                                        </div>
+                                        <span class="caption">Trace 2 : Architecture de l'outil de validation et intégration CI</span>
+                                    </div>
+                                    <div class="trace-desc-panel">
+                                        <p>La Trace 2 ci-contre représente l'outil de validation automatique de traductions (.resx) que j'ai développé en C# Console, avec une intégration dans le pipeline CI de GitLab. Cet outil remplace un existant développé en Delphi, un langage vieillissant qui n'est plus utilisé dans nos services et qui rendait la maintenance difficile. La refonte en C# permet de l'intégrer dans l'écosystème .NET moderne de l'entreprise et d'en faciliter l'évolution.</p>
+                                        <p>L'outil applique des tests automatiques pour vérifier la qualité des traductions : détection des traductions manquantes, des problèmes de ponctuation, des incohérences entre les fichiers source et traduits, et des différences de longueur significatives. J'ai <span class="highlighted-term bg-purple">conçu l'architecture en respectant les principes SOLID</span>, en utilisant la <span class="highlighted-term bg-purple">Dependency Injection</span> et en organisant le code par features. Cette structuration garantit la maintenabilité du projet et permet d'ajouter facilement de nouvelles règles de validation sans modifier le code existant.</p>
+                                        <p>L'outil a été <span class="highlighted-term bg-red">intégré dans un pipeline CI GitLab</span> et s'exécute automatiquement à chaque commit et à chaque merge request. En cas d'échec, le pipeline génère un rapport détaillé listant chaque traduction ayant provoqué une erreur ou un warning, selon la gravité du problème détecté. Les codes de sortie sont adaptés à l'intégration continue (échec bloquant pour les erreurs critiques, avertissement pour les problèmes mineurs), et les résultats sont disponibles sous forme d'artifacts GitLab consultables directement par les développeurs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Tech Bilan ===== -->
+                    <div class="v-tab-pane">
+                        <!-- Bilan 1 : Savoir développer une application -->
+                        <div class="v-card mb-4">
+                            <div class="v-card-title">Savoir développer une application multi-plateforme</div>
+                            <div class="v-card-text">
+                                <div class="bilan-sub-section mb-4">
+                                    <div class="bilan-subtitle">Synthèse</div>
+                                    <p>Au cours de mon alternance, j'ai <span class="highlighted-term bg-blue">développé des applications multi-plateformes en C#</span> en suivant une progression technique réfléchie : d'abord une application console pour valider la logique métier, puis WinForms pour offrir une interface graphique sur desktop, et enfin MAUI pour déployer l'application sur une tablette Android à l'accueil du laboratoire (Trace 1). J'ai également <span class="highlighted-term bg-green">intégré la communication réseau avec des périphériques</span> (imprimante Zebra via WiFi/HTTP) pour l'impression de badges visiteurs, ce qui m'a confronté à des problèmes concrets de compatibilité entre versions du Zebra SDK et versions de .NET. Enfin, j'ai <span class="highlighted-term bg-orange">géré la persistance de données</span> en CSV puis réorganisé les sauvegardes vers le cloud. La programmation orientée objet et les bases du C# ont été vues en cours de BUT, mais le développement multi-plateforme avec MAUI, l'intégration de SDK matériels et la gestion de la compatibilité .NET Framework / .NET Core ont été entièrement appris en entreprise.</p>
+                                </div>
+                                <div class="bilan-sub-section">
+                                    <div class="bilan-subtitle">Évaluation</div>
+                                    <p><strong>Niveau avant l'alternance :</strong> Bases en C# et programmation orientée objet acquises en cours. Aucune expérience avec WinForms, MAUI ou l'intégration de SDK matériels. Pas de connaissance des différences entre .NET Framework et .NET Core.</p>
+                                    <p><strong>Niveau actuel :</strong> Bon. Je suis capable de concevoir et développer une application complète depuis la console jusqu'à une application mobile déployée sur tablette, d'intégrer des SDK tiers (Zebra) en résolvant les problèmes de compatibilité, et de gérer la persistance de données sous différentes formes. L'application est aujourd'hui en production et utilisée quotidiennement. Des progrès restent à faire sur l'optimisation mobile et la gestion avancée des cycles de vie Android.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bilan 2 : Savoir concevoir une architecture logicielle -->
+                        <div class="v-card mb-4">
+                            <div class="v-card-title">Savoir concevoir une architecture logicielle propre</div>
+                            <div class="v-card-text">
+                                <div class="bilan-sub-section mb-4">
+                                    <div class="bilan-subtitle">Synthèse</div>
+                                    <p>L'outil de validation automatique (Trace 2) a été conçu pour remplacer un existant en Delphi, un langage vieillissant qui n'était plus maintenu dans les services de l'entreprise. Ce contexte de refonte m'a imposé de <span class="highlighted-term bg-purple">concevoir une architecture SOLID avec Dependency Injection</span> dès le départ, afin de garantir que le nouvel outil soit facilement maintenable et extensible. L'organisation par features et le respect des principes de responsabilité unique permettent d'ajouter de nouvelles règles de validation (ponctuation, cohérence, longueur) sans modifier le code existant. J'ai également <span class="highlighted-term bg-red">intégré cet outil dans un pipeline CI/CD GitLab</span>, avec une exécution automatique à chaque commit et merge request, des codes de sortie différenciés (erreurs vs warnings) et des artifacts consultables. Pour concevoir cette architecture propre et la mettre en pratique sur un projet de refonte industrielle avec intégration CI/CD, j'ai bénéficié de l'aide et de l'accompagnement précieux de collègues expérimentés (développeurs seniors) de mon équipe.</p>
+                                </div>
+                                <div class="bilan-sub-section">
+                                    <div class="bilan-subtitle">Évaluation</div>
+                                    <p><strong>Niveau avant l'alternance :</strong> Connaissance théorique très basique des principes SOLID. Aucune expérience pratique de CI/CD, d'injection de dépendances (DI) dans un projet réel, ni de refonte d'un logiciel existant.</p>
+                                    <p><strong>Niveau actuel :</strong> Bon à très bon. Je maîtrise l'application concrète des principes SOLID et de la DI dans un projet C#. Je suis capable de configurer et maintenir un pipeline CI/CD GitLab avec gestion d'artifacts, de codes de sortie et de déclencheurs (commit, merge request). L'outil est aujourd'hui en production et utilisé en phase de test par l'équipe. La difficulté principale résidait dans la compréhension de l'injection de dépendances au départ, mais le travail d'analyse avec un développeur senior m'a permis de progresser rapidement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- PAGE: SUIVI DE PROJET                          -->
+            <!-- ============================================== -->
+            <section id="page-suivi-projet" class="page-section">
+                <!-- Header Info -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Présentation et évaluation de suivi de projet</div>
+                    <div class="v-card-text">
+                        <p>Cette partie présente mes savoir-faire en matière de suivi et gestion de projet, acquis lors de mon alternance. Deux traces illustrent mes réalisations, suivies d'un bilan évaluant mes compétences en pilotage de projet.</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="v-tabs-container mb-6">
+                    <button class="v-tab-btn active" data-tab-idx="0">Trace 3</button>
+                    <button class="v-tab-btn" data-tab-idx="1">Trace 4</button>
+                    <button class="v-tab-btn" data-tab-idx="2">Bilan &amp; évaluation</button>
+                </div>
+
+                <div class="v-tabs-content">
+                    <!-- ===== Trace 3 : Gestion des échantillons (URS → app) ===== -->
+                    <div class="v-tab-pane active">
+                        <div class="v-card">
+                            <div class="v-card-title">Trace 3 : Développement de l'application de gestion des échantillons laboratoire</div>
+                            <div class="v-card-text">
+                                <div class="skills-highlight-bar mb-4">
+                                    <strong>Savoir-faire élémentaires :</strong>
+                                    <span class="skill-tag bg-teal">Traduire un besoin utilisateur (URS) en fonctionnalités</span>
+                                    <span class="skill-tag bg-yellow">Gérer les itérations et intégrer les feedbacks</span>
+                                    <span class="skill-tag bg-blue">Concevoir une interface MDI adaptée</span>
+                                </div>
+                                <div class="trace-grid">
+                                    <div class="trace-image-panel">
+                                        <div class="image-mock trace-mock">
+                                            <span>[Capture Trace 3 — à fournir]</span>
+                                            <div class="mock-marker frame" style="top:10%; left:5%; width:45%; height:30%;">
+                                                <span class="marker-label">Formulaire d'enregistrement</span>
+                                            </div>
+                                            <div class="mock-marker frame" style="top:50%; left:50%; width:45%; height:35%;">
+                                                <span class="marker-label">Menu administrateur</span>
+                                            </div>
+                                        </div>
+                                        <span class="caption">Trace 3 : Interface de l'application de gestion des échantillons</span>
+                                    </div>
+                                    <div class="trace-desc-panel">
+                                        <p>La Trace 3 ci-contre représente l'application WinForms de gestion des échantillons laboratoire, développée à partir d'un URS (User Requirements Specification) fourni par l'entreprise. L'URS décrivait des besoins précis de traçabilité : pouvoir enregistrer quel utilisateur a enregistré quel échantillon, à quelle date et dans quelles conditions, afin de répondre aux exigences réglementaires de l'industrie pharmaceutique.</p>
+                                        <p>L'objectif principal était de remplacer un processus entièrement papier par une application numérique fiable. J'ai dû <span class="highlighted-term bg-teal">traduire les besoins utilisateurs décrits dans l'URS en fonctionnalités concrètes</span> : formulaire d'enregistrement des échantillons avec identification automatique de l'utilisateur via son identifiant Windows (pas besoin de saisir manuellement qui enregistre), génération de PDF récapitulant la liste des échantillons enregistrés, et interface MDI permettant de travailler sur plusieurs vues en parallèle.</p>
+                                        <p>Après l'implémentation complète et la mise en place d'une version de test, j'ai <span class="highlighted-term bg-yellow">intégré les feedbacks des utilisateurs du laboratoire pour améliorer l'application</span>. Ces retours portaient sur l'ergonomie des formulaires, la clarté des PDF générés et des ajustements fonctionnels pour mieux coller au workflow réel du laboratoire. Ce processus itératif m'a permis d'affiner les fonctionnalités et de mieux répondre aux attentes réelles. J'ai également <span class="highlighted-term bg-blue">conçu l'interface MDI</span> avec un menu administrateur dédié à la gestion du stockage et de la sécurité, permettant aux responsables de configurer les paramètres de l'application sans intervention technique.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Trace 4 : Pipeline CI/CD traductions ===== -->
+                    <div class="v-tab-pane">
+                        <div class="v-card">
+                            <div class="v-card-title">Trace 4 : Intégration et automatisation CI/CD pour les traductions</div>
+                            <div class="v-card-text">
+                                <div class="skills-highlight-bar mb-4">
+                                    <strong>Savoir-faire élémentaires :</strong>
+                                    <span class="skill-tag bg-orange">Automatiser un workflow avec CI/CD (GitLab, YAML)</span>
+                                    <span class="skill-tag bg-green">Documenter et comparer des solutions techniques</span>
+                                </div>
+                                <div class="trace-grid">
+                                    <div class="trace-image-panel">
+                                        <div class="image-mock trace-mock">
+                                            <span>[Capture Trace 4 — à fournir]</span>
+                                            <div class="mock-marker frame" style="top:15%; left:15%; width:70%; height:60%;">
+                                                <span class="marker-label">Pipeline YAML</span>
+                                            </div>
+                                        </div>
+                                        <span class="caption">Trace 4 : Configuration du pipeline CI/CD GitLab pour les traductions</span>
+                                    </div>
+                                    <div class="trace-desc-panel">
+                                        <p>La Trace 4 ci-contre illustre la mise en place d'un job CI GitLab pour faciliter le téléchargement et la gestion des fichiers de traduction RESX. Avant ce pipeline, les fichiers de traduction étaient récupérés manuellement à partir de l'ancien logiciel Delphi sous forme d'archive ZIP, un processus fastidieux et source d'erreurs lorsque plusieurs développeurs travaillaient en parallèle sur les traductions.</p>
+                                        <p>J'ai <span class="highlighted-term bg-orange">automatisé ce workflow en configurant un pipeline CI/CD avec YAML</span>. Le job CI extrait automatiquement les fichiers RESX et les met à disposition sous forme d'artifacts GitLab, permettant à chaque membre de l'équipe de télécharger la dernière version des traductions en un clic depuis l'interface GitLab, sans avoir à manipuler l'ancien outil Delphi.</p>
+                                        <p>En complément de cette automatisation, j'ai réalisé une étude comparative approfondie des solutions de traduction RESX. J'ai <span class="highlighted-term bg-green">documenté cette recherche sur Confluence</span>, en comparant les solutions cloud et standalone, open source et payantes, en analysant leurs avantages et inconvénients respectifs. Les résultats ont été présentés en réunion et la décision finale a été <span class="highlighted-term bg-green">prise conjointement avec le chef du Product Management et un développeur senior</span> travaillant sur le projet, afin de choisir la solution la plus adaptée aux besoins de l'équipe.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Suivi de projet — Bilan ===== -->
+                    <div class="v-tab-pane">
+                        <!-- Bilan 1 : Savoir traduire des besoins en fonctionnalités -->
+                        <div class="v-card mb-4">
+                            <div class="v-card-title">Savoir traduire des besoins utilisateurs en fonctionnalités</div>
+                            <div class="v-card-text">
+                                <div class="bilan-sub-section mb-4">
+                                    <div class="bilan-subtitle">Synthèse</div>
+                                    <p>Pour l'application de gestion des échantillons (Trace 3), j'ai dû <span class="highlighted-term bg-teal">partir d'un URS décrivant des exigences de traçabilité pharmaceutique pour concevoir et implémenter les fonctionnalités</span> correspondantes. Ce travail a impliqué de comprendre des besoins métier spécifiques (qui enregistre quoi, quand, dans quelles conditions), de les décomposer en tâches techniques (formulaires, identification Windows, génération PDF), puis de <span class="highlighted-term bg-yellow">valider les résultats par itérations successives en intégrant les retours des utilisateurs du laboratoire</span>. Pour guider cette démarche et traduire efficacement les spécifications en fonctionnalités, j'ai été accompagné par des développeurs seniors de l'entreprise, ce qui a rendu possible la mise en pratique de ces bonnes méthodes sur un vrai URS industriel dans un contexte pharmaceutique réglementé.</p>
+                                </div>
+                                <div class="bilan-sub-section">
+                                    <div class="bilan-subtitle">Évaluation</div>
+                                    <p><strong>Niveau avant l'alternance :</strong> Connaissance théorique très limitée du recueil de besoins. Aucune expérience de travail à partir d'un URS industriel ni de contexte réglementé.</p>
+                                    <p><strong>Niveau actuel :</strong> Bon. Je suis capable de lire un URS, d'en extraire les fonctionnalités clés et de les implémenter de manière itérative en intégrant les retours utilisateurs. L'application est en version fonctionnelle en phase de test. La principale difficulté a été d'interpréter correctement certaines exigences de traçabilité propres au domaine pharmaceutique.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bilan 2 : Savoir automatiser et piloter un workflow -->
+                        <div class="v-card mb-4">
+                            <div class="v-card-title">Savoir automatiser et piloter un workflow de développement</div>
+                            <div class="v-card-text">
+                                <div class="bilan-sub-section mb-4">
+                                    <div class="bilan-subtitle">Synthèse</div>
+                                    <p>La mise en place du pipeline CI/CD (Trace 4) et l'outil de validation (Trace 2) m'ont permis de développer des compétences en <span class="highlighted-term bg-orange">automatisation de workflows avec GitLab CI/CD et YAML</span>. Concrètement, j'ai remplacé un processus de récupération manuelle de fichiers ZIP depuis un ancien logiciel Delphi par un pipeline automatisé avec artifacts téléchargeables. J'ai également appris à <span class="highlighted-term bg-green">documenter et comparer des solutions techniques</span> (cloud vs standalone, open source vs payantes) et à présenter mes conclusions en réunion avec le chef du Product Management et un développeur senior pour supporter la prise de décision. Ces compétences n'étaient pas directement enseignées en cours et ont été principalement acquises en entreprise, par la pratique et l'accompagnement de collègues expérimentés.</p>
+                                </div>
+                                <div class="bilan-sub-section">
+                                    <div class="bilan-subtitle">Évaluation</div>
+                                    <p><strong>Niveau avant l'alternance :</strong> Notion de base de Git acquise en cours. Aucune connaissance de GitLab CI/CD, de YAML, ni d'expérience de présentation technique devant des décideurs.</p>
+                                    <p><strong>Niveau actuel :</strong> Bon. Je maîtrise la configuration de pipelines CI/CD avec jobs, stages, déclencheurs (commit, merge request) et artifacts. La documentation sur Confluence et la comparaison de solutions m'ont aussi appris à structurer une réflexion technique pour la communiquer à des non-développeurs (Product Management), et à participer activement à une prise de décision collective.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- PAGE: INTÉGRATION                              -->
+            <!-- ============================================== -->
+            <section id="page-integration" class="page-section">
+                <!-- Header Info -->
+                <div class="v-card mb-6">
+                    <div class="v-card-title">Présentation et évaluation de l'intégration en entreprise</div>
+                    <div class="v-card-text">
+                        <p>Cette partie présente mes savoir-faire liés à l'intégration et au travail en entreprise. Une trace illustre ma contribution continue à un projet d'équipe, suivie d'un bilan évaluant ma capacité à m'intégrer dans un environnement professionnel.</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="v-tabs-container mb-6">
+                    <button class="v-tab-btn active" data-tab-idx="0">Trace 5</button>
+                    <button class="v-tab-btn" data-tab-idx="1">Bilan &amp; évaluation</button>
+                </div>
+
+                <div class="v-tabs-content">
+                    <!-- ===== Trace 5 : Contribution Camos ===== -->
+                    <div class="v-tab-pane active">
+                        <div class="v-card">
+                            <div class="v-card-title">Trace 5 : Contribution au projet Camos et exploration d'Easytouch</div>
+                            <div class="v-card-text">
+                                <div class="skills-highlight-bar mb-4">
+                                    <strong>Savoir-faire élémentaires :</strong>
+                                    <span class="skill-tag bg-red">S'intégrer dans un projet logiciel existant</span>
+                                    <span class="skill-tag bg-green">Travailler en autonomie et prendre des responsabilités</span>
+                                    <span class="skill-tag bg-blue">Collaborer avec des équipes pluridisciplinaires</span>
+                                </div>
+                                <div class="trace-grid">
+                                    <div class="trace-image-panel">
+                                        <div class="image-mock trace-mock">
+                                            <span>[Capture Trace 5 — à fournir]</span>
+                                            <div class="mock-marker frame" style="top:10%; left:10%; width:80%; height:35%;">
+                                                <span class="marker-label">Tickets Jira (Camos)</span>
+                                            </div>
+                                            <div class="mock-marker frame" style="top:55%; left:10%; width:80%; height:35%;">
+                                                <span class="marker-label">Documentation Easytouch</span>
+                                            </div>
+                                        </div>
+                                        <span class="caption">Trace 5 : Contributions au projet Camos et exploration d'Easytouch</span>
+                                    </div>
+                                    <div class="trace-desc-panel">
+                                        <p>La Trace 5 ci-contre illustre ma contribution continue au projet Camos, un logiciel no-code de SOTAX qui permet de configurer les appareils de l'entreprise et d'accéder aux procédures de compliance (tests de conformité). C'est un projet sur lequel j'ai travaillé de manière régulière tout au long de mon alternance.</p>
+                                        <p>Sur le projet Camos, j'ai réalisé des tests fonctionnels sur les appareils SOTAX, des corrections de bugs suivies via Jira, de la gestion d'erreurs et du support en autonomie. J'ai dû <span class="highlighted-term bg-red">m'intégrer dans un projet logiciel existant</span> avec sa propre base de code, ses conventions de travail et ses processus de qualification. Durant une période de deux semaines, j'ai été <span class="highlighted-term bg-green">responsable temporaire du projet pendant l'absence du lead développeur</span>. Cette responsabilité m'a amené à assurer la répartition du travail au sein de l'équipe et à échanger directement avec les testeurs de Camos pour prioriser les corrections et valider les résultats, en toute autonomie.</p>
+                                        <p>En parallèle, j'ai exploré le logiciel Easytouch, un logiciel embarqué qui contrôle les appareils de dissolution et de tests physiques de SOTAX. Easytouch est l'un des plus gros projets de l'entreprise, et cette exploration a été menée en vue de bientôt travailler dessus. J'ai dû <span class="highlighted-term bg-blue">collaborer avec des développeurs et des product managers</span> pour comprendre l'architecture du logiciel, sa base de données et ses fonctionnalités métier, à travers la lecture de FRS (Functional Requirements Specification) et des tests manuels sur les appareils.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Intégration — Bilan ===== -->
+                    <div class="v-tab-pane">
+                        <div class="v-card mb-4">
+                            <div class="v-card-title">Savoir s'intégrer et travailler efficacement en entreprise</div>
+                            <div class="v-card-text">
+                                <div class="bilan-sub-section mb-4">
+                                    <div class="bilan-subtitle">Synthèse</div>
+                                    <p>Ma contribution au projet Camos (Trace 5) a été un exercice continu d'intégration dans une équipe et un projet existants, tout au long de mon alternance. J'ai appris à <span class="highlighted-term bg-red">reprendre et contribuer à un logiciel no-code existant</span> avec ses propres conventions et processus de qualification. J'ai progressivement gagné en <span class="highlighted-term bg-green">autonomie jusqu'à assurer la responsabilité temporaire du projet pendant deux semaines</span>, durant lesquelles j'ai assuré la répartition du travail et les échanges avec les testeurs. L'exploration d'Easytouch, l'un des plus gros projets de l'entreprise, m'a également permis de <span class="highlighted-term bg-blue">collaborer avec des profils variés</span> (développeurs, product managers, experts métier des appareils de dissolution) pour comprendre un système complexe. Ces savoir-faire relèvent principalement du savoir-être professionnel, peu enseigné en cours mais essentiel en entreprise. L'apprentissage s'est fait par l'immersion progressive dans l'équipe tout au long de l'alternance.</p>
+                                </div>
+                                <div class="bilan-sub-section">
+                                    <div class="bilan-subtitle">Évaluation</div>
+                                    <p><strong>Niveau avant l'alternance :</strong> Expérience limitée au travail en groupe en contexte scolaire (projets de cours). Aucune expérience de travail en entreprise sur un vrai projet logiciel industriel.</p>
+                                    <p><strong>Niveau actuel :</strong> Très bon. J'ai su m'adapter rapidement à l'environnement professionnel et gagner la confiance de l'équipe, au point de me voir confier la responsabilité temporaire du projet Camos pendant deux semaines (répartition du travail, échanges avec les testeurs, priorisation des corrections). Ma capacité à comprendre un code existant, à réaliser des tests fonctionnels sur des appareils industriels et à communiquer efficacement avec des interlocuteurs non-techniques s'est considérablement améliorée. L'exploration d'Easytouch prépare ma montée en compétence sur ce projet majeur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 
     <script src="script.js"></script>
