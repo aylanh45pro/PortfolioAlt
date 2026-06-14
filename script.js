@@ -101,6 +101,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 5. Carousel logic (Trace 3)
+    function initCarousel() {
+        const carousel = document.getElementById('carousel-trace3');
+        if (!carousel) return;
+
+        const slides = carousel.querySelectorAll('.v-carousel-slide');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, idx) => {
+                if (idx === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            currentSlide = index;
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                let nextIdx = currentSlide - 1;
+                if (nextIdx < 0) {
+                    nextIdx = slides.length - 1;
+                }
+                showSlide(nextIdx);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                let nextIdx = currentSlide + 1;
+                if (nextIdx >= slides.length) {
+                    nextIdx = 0;
+                }
+                showSlide(nextIdx);
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                showSlide(idx);
+            });
+        });
+    }
+
+    initCarousel();
+
     // Adjust UI on window resize
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {

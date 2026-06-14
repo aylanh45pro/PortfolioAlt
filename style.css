@@ -506,6 +506,195 @@ body {
     color: var(--primary-hover);
 }
 
+/* Real Assets & Component Integrations */
+.company-logo {
+    width: 200px;
+    height: 120px;
+    object-fit: contain;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: var(--shadow-1);
+}
+
+.trace-image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-1);
+    background-color: #f8fafc;
+}
+
+.trace-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    display: block;
+    object-fit: contain;
+}
+
+.trace-double-images {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.trace-double-images.horizontal {
+    align-items: stretch;
+}
+
+.trace-double-images .trace-image-wrapper {
+    flex: 1;
+}
+
+.trace-double-images.horizontal .primary-image {
+    flex: 1.5;
+}
+
+.trace-double-images.horizontal .secondary-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trace-double-images.horizontal .secondary-image img {
+    max-height: 250px;
+    object-fit: contain;
+}
+
+/* Custom CSS/JS Carousel */
+.v-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-2);
+    background-color: #fafafa;
+}
+
+.v-carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
+
+.v-carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.v-carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.v-carousel-slide .trace-image-wrapper {
+    flex: 1;
+    border-radius: 12px 12px 0 0;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.v-carousel-slide .trace-img {
+    max-height: 320px;
+    object-fit: contain;
+}
+
+.carousel-caption {
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-1);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    z-index: 10;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.carousel-prev {
+    left: 12px;
+}
+
+.carousel-next {
+    right: 12px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 60px; /* Position above caption */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.carousel-dots .dot:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-dots .dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .trace-grid {
@@ -548,5 +737,23 @@ body {
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 10px;
+    }
+    
+    /* Responsive double images and carousel adjustments */
+    .trace-double-images {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .trace-double-images.horizontal .secondary-image img {
+        max-height: 200px;
+    }
+    .v-carousel-slides {
+        height: 360px;
+    }
+    .v-carousel-slide .trace-img {
+        max-height: 260px;
+    }
+    .carousel-dots {
+        bottom: 70px;
     }
 }

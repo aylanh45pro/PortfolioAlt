@@ -95,9 +95,7 @@
                         <p>Les différentes traces, descriptifs et analyses présentés dans ce portfolio sont issus de mon alternance effectuée chez <strong>SOTAX Pharma Services</strong>, de août 2025 à août 2027. Le rythme d'alternance est d'une semaine en entreprise / une semaine à l'IUT en période scolaire, et à temps plein en entreprise en dehors de ces périodes.</p>
                         <div class="contexte-layout mt-4">
                             <div class="company-logo-box">
-                                <div class="image-mock">
-                                    <span>[Logo SOTAX]</span>
-                                </div>
+                                <img src="assets/sotax-logo.jpeg" alt="Logo SOTAX" class="company-logo">
                                 <span class="caption">Le logo de l'entreprise</span>
                             </div>
                             <div class="company-desc">
@@ -198,16 +196,21 @@
                                 </div>
                                 <div class="trace-grid">
                                     <div class="trace-image-panel">
-                                        <div class="image-mock trace-mock">
-                                            <span>[Capture Trace 2 — à fournir]</span>
-                                            <div class="mock-marker frame" style="top:15%; left:10%; width:80%; height:20%;">
-                                                <span class="marker-label">Architecture SOLID</span>
+                                        <div class="trace-double-images">
+                                            <div class="trace-image-wrapper">
+                                                <img src="assets/Translation-validator-tests-output-1.jpeg" alt="Sortie console 1 du validateur" class="trace-img">
+                                                <div class="mock-marker frame" style="top:15%; left:10%; width:80%; height:20%;">
+                                                    <span class="marker-label">Architecture SOLID</span>
+                                                </div>
                                             </div>
-                                            <div class="mock-marker frame" style="top:60%; left:10%; width:80%; height:25%;">
-                                                <span class="marker-label">Pipeline CI GitLab</span>
+                                            <div class="trace-image-wrapper">
+                                                <img src="assets/Translation-validator-tests-output-2.jpeg" alt="Sortie console 2 du validateur" class="trace-img">
+                                                <div class="mock-marker frame" style="top:60%; left:10%; width:80%; height:25%;">
+                                                    <span class="marker-label">Pipeline CI GitLab</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <span class="caption">Trace 2 : Architecture de l'outil de validation et intégration CI</span>
+                                        <span class="caption">Trace 2 : Les deux sorties de console illustrent que les outputs de code peuvent être différents selon les erreurs détectées dans les fichiers .resx.</span>
                                     </div>
                                     <div class="trace-desc-panel">
                                         <p>La Trace 2 ci-contre représente l'outil de validation automatique de traductions (.resx) que j'ai développé en C# Console, avec une intégration dans le pipeline CI de GitLab. Cet outil remplace un existant développé en Delphi, un langage vieillissant qui n'est plus utilisé dans nos services et qui rendait la maintenance difficile. La refonte en C# permet de l'intégrer dans l'écosystème .NET moderne de l'entreprise et d'en faciliter l'évolution.</p>
@@ -289,16 +292,39 @@
                                 </div>
                                 <div class="trace-grid">
                                     <div class="trace-image-panel">
-                                        <div class="image-mock trace-mock">
-                                            <span>[Capture Trace 3 — à fournir]</span>
-                                            <div class="mock-marker frame" style="top:10%; left:5%; width:45%; height:30%;">
-                                                <span class="marker-label">Formulaire d'enregistrement</span>
+                                        <div class="v-carousel" id="carousel-trace3">
+                                            <div class="v-carousel-slides">
+                                                <!-- Slide 1 -->
+                                                <div class="v-carousel-slide active">
+                                                    <div class="trace-image-wrapper">
+                                                        <img src="assets/Menu-Add-Sample-Saving-Samples.jpeg" alt="Formulaire d'enregistrement" class="trace-img">
+                                                        <div class="mock-marker frame" style="top:10%; left:5%; width:45%; height:30%;">
+                                                            <span class="marker-label">Formulaire d'enregistrement</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="carousel-caption">Interface de saisie et d'enregistrement d'un nouvel échantillon au laboratoire.</span>
+                                                </div>
+                                                <!-- Slide 2 -->
+                                                <div class="v-carousel-slide">
+                                                    <div class="trace-image-wrapper">
+                                                        <img src="assets/Menu-Admin-Saving-Samples.jpeg" alt="Menu administrateur" class="trace-img">
+                                                        <div class="mock-marker frame" style="top:50%; left:50%; width:45%; height:35%;">
+                                                            <span class="marker-label">Menu administrateur</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="carousel-caption">Interface d'administration permettant la gestion de la sécurité et de l'historique du stockage.</span>
+                                                </div>
                                             </div>
-                                            <div class="mock-marker frame" style="top:50%; left:50%; width:45%; height:35%;">
-                                                <span class="marker-label">Menu administrateur</span>
+                                            <!-- Navigation Buttons -->
+                                            <button class="carousel-prev" aria-label="Précédent">&lt;</button>
+                                            <button class="carousel-next" aria-label="Suivant">&gt;</button>
+                                            <!-- Navigation Dots -->
+                                            <div class="carousel-dots">
+                                                <span class="dot active" data-slide="0"></span>
+                                                <span class="dot" data-slide="1"></span>
                                             </div>
                                         </div>
-                                        <span class="caption">Trace 3 : Interface de l'application de gestion des échantillons</span>
+                                        <span class="caption">Trace 3 : Aperçus interactifs de l'application de gestion des échantillons (utilisez les flèches pour changer de vue)</span>
                                     </div>
                                     <div class="trace-desc-panel">
                                         <p>La Trace 3 ci-contre représente l'application WinForms de gestion des échantillons laboratoire, développée à partir d'un URS (User Requirements Specification) fourni par l'entreprise. L'URS décrivait des besoins précis de traçabilité : pouvoir enregistrer quel utilisateur a enregistré quel échantillon, à quelle date et dans quelles conditions, afin de répondre aux exigences réglementaires de l'industrie pharmaceutique.</p>
@@ -322,13 +348,18 @@
                                 </div>
                                 <div class="trace-grid">
                                     <div class="trace-image-panel">
-                                        <div class="image-mock trace-mock">
-                                            <span>[Capture Trace 4 — à fournir]</span>
-                                            <div class="mock-marker frame" style="top:15%; left:15%; width:70%; height:60%;">
-                                                <span class="marker-label">Pipeline YAML</span>
+                                        <div class="trace-double-images horizontal">
+                                            <div class="trace-image-wrapper primary-image">
+                                                <img src="assets/Job-gitlabCI-traductions.jpeg" alt="Job GitLab CI/CD" class="trace-img">
+                                                <div class="mock-marker frame" style="top:15%; left:15%; width:70%; height:60%;">
+                                                    <span class="marker-label">Pipeline YAML</span>
+                                                </div>
+                                            </div>
+                                            <div class="trace-image-wrapper secondary-image">
+                                                <img src="assets/Artifact-telechargement-traductions-surligne.jpeg" alt="Artefact de téléchargement" class="trace-img">
                                             </div>
                                         </div>
-                                        <span class="caption">Trace 4 : Configuration du pipeline CI/CD GitLab pour les traductions</span>
+                                        <span class="caption">Trace 4 : Le job d'intégration continue GitLab CI (à gauche) génère automatiquement le fichier d'artefact de traduction téléchargeable et surligné (à droite).</span>
                                     </div>
                                     <div class="trace-desc-panel">
                                         <p>La Trace 4 ci-contre illustre la mise en place d'un job CI GitLab pour faciliter le téléchargement et la gestion des fichiers de traduction RESX. Avant ce pipeline, les fichiers de traduction étaient récupérés manuellement à partir de l'ancien logiciel Delphi sous forme d'archive ZIP, un processus fastidieux et source d'erreurs lorsque plusieurs développeurs travaillaient en parallèle sur les traductions.</p>
