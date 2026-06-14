@@ -437,32 +437,7 @@ body {
     border-style: dashed;
 }
 
-.mock-marker {
-    position: absolute;
-    pointer-events: none;
-}
 
-/* Red frames for validation traces */
-.mock-marker.frame {
-    border: 2px solid #ef4444;
-    background-color: rgba(239, 68, 68, 0.08);
-    border-radius: 6px;
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.05);
-}
-
-.marker-label {
-    position: absolute;
-    top: -22px;
-    left: 0;
-    background-color: #ef4444;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-}
 
 .highlighted-term {
     font-weight: 600;
