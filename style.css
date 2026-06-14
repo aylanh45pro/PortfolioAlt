@@ -859,3 +859,46 @@ body {
     }
 }
 
+/* Glassmorphic Zoom Indicator Hint overlay */
+.zoom-indicator {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #f1f5f9;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    pointer-events: none; /* Let clicks fall through to the image */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-indicator svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects triggers from the parent image wrapper */
+.trace-image-wrapper:hover .zoom-indicator {
+    opacity: 1;
+    transform: scale(1.1);
+    background: rgba(15, 23, 42, 0.85);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #38bdf8; /* Sleek sky blue accent on hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.trace-image-wrapper:hover .zoom-indicator svg {
+    transform: rotate(90deg); /* Playful micro-rotation */
+}
+
