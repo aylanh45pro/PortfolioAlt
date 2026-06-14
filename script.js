@@ -159,6 +159,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCarousel();
 
+    // 6. Lightbox logic
+    function initLightbox() {
+        const lightbox = document.getElementById('lightbox-dialog');
+        if (!lightbox) return;
+
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        
+        // Find all images that can be enlarged
+        const images = document.querySelectorAll('.trace-img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = img.alt || '';
+                lightbox.showModal();
+            });
+        });
+
+        // Close on close button click
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                lightbox.close();
+            });
+        }
+
+        // Fallback for browsers without closedby support
+        if (!('closedBy' in HTMLDialogElement.prototype)) {
+            lightbox.addEventListener('click', (event) => {
+                if (event.target !== lightbox) return;
+                const rect = lightbox.getBoundingClientRect();
+                const isDialogContent = (
+                    rect.top <= event.clientY &&
+                    event.clientY <= rect.top + rect.height &&
+                    rect.left <= event.clientX &&
+                    event.clientX <= rect.left + rect.width
+                );
+                if (!isDialogContent) {
+                    lightbox.close();
+                }
+            });
+        }
+    }
+
+    initLightbox();
+
     // Adjust UI on window resize
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
