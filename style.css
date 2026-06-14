@@ -559,7 +559,7 @@ body {
 .v-carousel-slides {
     position: relative;
     width: 100%;
-    height: 420px;
+    height: auto;
 }
 
 .v-carousel-slide {
@@ -567,7 +567,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -576,12 +575,13 @@ body {
 }
 
 .v-carousel-slide.active {
+    position: relative;
     opacity: 1;
     visibility: visible;
 }
 
 .v-carousel-slide .trace-image-wrapper {
-    flex: 1;
+    width: 100%;
     border-radius: 12px 12px 0 0;
     border: none;
     box-shadow: none;
@@ -593,8 +593,11 @@ body {
 }
 
 .v-carousel-slide .trace-img {
-    max-height: 320px;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
     object-fit: contain;
+    display: block;
 }
 
 .carousel-caption {
@@ -723,10 +726,10 @@ body {
         max-height: 200px;
     }
     .v-carousel-slides {
-        height: 360px;
+        height: auto;
     }
     .v-carousel-slide .trace-img {
-        max-height: 260px;
+        max-height: 350px;
     }
     .carousel-dots {
         bottom: 70px;
@@ -751,6 +754,11 @@ body {
 
 /* Base style for native dialog */
 #lightbox-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
     border: none;
     background: transparent;
     padding: 0;
