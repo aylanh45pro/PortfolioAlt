@@ -506,7 +506,9 @@ body {
 
 /* Fix for single-image traces to prevent them from breaking the grid layout */
 .trace-image-panel > .trace-image-wrapper {
+    display: block;
     max-width: 600px;
+    margin-bottom: 8px;
 }
 
 .trace-img {
