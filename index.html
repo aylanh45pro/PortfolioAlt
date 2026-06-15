@@ -162,8 +162,31 @@
                                 </div>
                                 <div class="trace-grid">
                                     <div class="trace-image-panel">
-                                        <div class="image-mock trace-mock">
-                                            <span>[Capture Trace 1 — à fournir]</span>
+                                        <div class="v-carousel" id="carousel-trace1">
+                                            <div class="v-carousel-slides">
+                                                <!-- Slide 1 -->
+                                                <div class="v-carousel-slide active">
+                                                    <div class="trace-image-wrapper">
+                                                        <img src="assets/vue-acceuil-app-visitor.jpeg" alt="Vue d'accueil de l'application visiteurs" class="trace-img">
+                                                    </div>
+                                                    <span class="carousel-caption">Interface d'accueil de la tablette pour l'enregistrement des visiteurs.</span>
+                                                </div>
+                                                <!-- Slide 2 -->
+                                                <div class="v-carousel-slide">
+                                                    <div class="trace-image-wrapper">
+                                                        <img src="assets/gros-plan-visitor-app.jpeg" alt="Gros plan sur le formulaire de saisie" class="trace-img">
+                                                    </div>
+                                                    <span class="carousel-caption">Gros plan sur le formulaire de saisie pour l'enregistrement des visiteurs.</span>
+                                                </div>
+                                            </div>
+                                            <!-- Navigation Buttons -->
+                                            <button class="carousel-prev" aria-label="Précédent">&lt;</button>
+                                            <button class="carousel-next" aria-label="Suivant">&gt;</button>
+                                            <!-- Navigation Dots -->
+                                            <div class="carousel-dots">
+                                                <span class="dot active" data-slide="0"></span>
+                                                <span class="dot" data-slide="1"></span>
+                                            </div>
                                         </div>
                                         <span class="caption">Trace 1 : Interface de l'application d'enregistrement des visiteurs</span>
                                     </div>
